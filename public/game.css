@@ -146,7 +146,7 @@
 #codespherexmalt .more-link:hover {
   background: #eb5f5f;
 }
-#codespherexmalt body.silo-modal-open {
+#codespherexmalt.silo-modal-open {
   overflow: hidden;
 }
 #codespherexmalt .silo-modal {
