@@ -75,7 +75,7 @@ app.prepare().then(() => {
   router.get('/public-config', cors({
     origin: '*',
   }),async (ctx) => {
-    const shop = "codespherexmalt.myshopify.com"; // TODO query
+    const shop = ctx.query.shop;
 
     const config = db.getConfig(shop);
     console.log(config)
