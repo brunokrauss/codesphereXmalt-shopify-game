@@ -9,8 +9,8 @@ const session = require('koa-session');
 const { default: graphQLProxy } = require('@shopify/koa-shopify-graphql-proxy');
 const { ApiVersion } = require('@shopify/koa-shopify-graphql-proxy');
 const Router = require('koa-router');
-const { receiveWebhook, registerWebhook } = require('@shopify/koa-shopify-webhooks');
-const getSubscriptionUrl = require('./server/getSubscriptionUrl');
+const db = require('./server/database.handler');
+const cors = require('@koa/cors');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -41,28 +41,44 @@ app.prepare().then(() => {
           secure: true,
           sameSite: 'none'
         });
-        const registration = await registerWebhook({
-          address: `${HOST}/webhooks/products/create`,
-          topic: 'PRODUCTS_CREATE',
-          accessToken,
-          shop,
-          apiVersion: ApiVersion.July20
-        });
 
-        if (registration.success) {
-          console.log('Successfully registered webhook!');
-        } else {
-          console.log('Failed to register webhook', registration.result);
-        }
-        await getSubscriptionUrl(ctx, accessToken, shop);
+        // await getSubscriptionUrl(ctx, accessToken, shop);
+
+
       }
     })
   );
+  
+  router.get('/public-config', cors({
+    origin: '*',
+  }),async (ctx) => {
+    ctx.body = { success: true, reward: {
+      body: 'Thanks for playing. We prepared a gift for you. Enter following code in checkout and receive a free T-Shirt.',
+      code: 'CODESPHERExMALT'} }
+  });
 
-  const webhook = receiveWebhook({ secret: SHOPIFY_API_SECRET_KEY });
+  router.get('/config', verifyRequest(), async (ctx) => {
+    const { shop } = ctx.session;
 
-  router.post('/webhooks/products/create', webhook, (ctx) => {
-    console.log('received webhook: ', ctx.state.webhook);
+    if (typeof shop !== "undefined") {
+      const config = db.getConfig(shop);
+      ctx.body = { success: true, config }
+    } else {
+      ctx.body = { success: false }
+    }
+  });
+
+  router.put('/config', verifyRequest(), async (ctx) => {
+    const body = ctx.request.body;
+
+    const { shop } = ctx.session;
+
+    if (typeof body !== "undefined" && typeof body.config !== "undefined" && typeof shop !== "undefined") {
+      db.saveConfig(shop, body.config);
+      ctx.body = { success: true }
+    } else {
+      ctx.body = { success: false }
+    }
   });
 
   server.use(graphQLProxy({ version: ApiVersion.July20 }));
