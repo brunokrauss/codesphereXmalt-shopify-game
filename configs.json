@@ -1,1 +1,7 @@
-{}
+{
+    "codespherexmalt.myshopify.com": {
+        "cssSelector": "christmas-game",
+        "rewardText": "Thanks for playing. Enter following code and you will receive a free T-Shirt with your order",
+        "rewardCode": "CODESPHERExMALT"
+    }
+}

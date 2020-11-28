@@ -1,45 +1,92 @@
-import { EmptyState, Layout, Page } from '@shopify/polaris';
-import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react';
+import { Layout, Page, Card, Stack, Select, TextField, CalloutCard, SettingToggle, TextStyle, Frame } from '@shopify/polaris';
+import { TitleBar } from '@shopify/app-bridge-react';
 import store from 'store-js';
-import ResourceListWithProducts from '../components/ResourceList';
-
-const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
 
 class Index extends React.Component {
-  state = { open: false };
+  state = {
+    cssSelector: 'christmas-game',
+    rewardText: 'Thanks for playing. Enter followign code and you will receive a free T-Shirt with your order',
+    rewardCode: 'CODESPHERExMALT',
+  };
+
+  componentDidMount() {
+    this.getConfig();
+  }
+
+  getConfig() {
+    fetch("/config")
+    .then(res => res.json())
+    .then(({ success, config }) => {
+        if (success) {
+          this.setState({ ...config });
+        } else {
+          console.error(success, css);
+        }
+      }
+    )
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
+  saveConfig() {
+    this.setState()
+
+    fetch('/config', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        config: {
+          cssSelector: this.state.cssSelector,
+          rewardText: this.state.rewardText,
+          rewardCode:  this.state.rewardCode,
+        }
+      }),
+    })
+    .then(response => response.json())
+    .then(({ success }) => {
+      if (success) {
+        console.log(success);
+      } else {
+        console.error(success);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+
   render() {
-    const emptyState = !store.get('ids');
     return (
       <Page>
         <TitleBar
-          title="Sample App"
+          title="Settings"
           primaryAction={{
-          content: 'Select products',
-          onAction: () => this.setState({ open: true }),
+          content: 'Save',
+          onAction: () => this.saveConfig(),
         }} />
-        <ResourcePicker
-          resourceType="Product"
-          showVariants={false}
-          open={this.state.open}
-          onSelection={(resources) => this.handleSelection(resources)}
-          onCancel={() => this.setState({ open: false })}
-        />
-        {emptyState ? (
-          <Layout>
-            <EmptyState
-              heading="Discount your products temporarily"
-              action={{
-                content: 'Select products',
-                onAction: () => this.setState({ open: true }),
-              }}
-              image={img}
-            >
-              <p>Select products to change their price temporarily.</p>
-            </EmptyState>
-          </Layout>
-        ) : (
-            <ResourceListWithProducts />
-          )}
+        <Layout.AnnotatedSection
+          title="Settings"
+          description="Configure Game Settings"
+          >
+          <Card>
+            <Card.Section>
+              <Stack alignment="fill" vertical="true">
+                <Stack.Item>
+                  <TextField label="CSS Selector (by ID)" placeholder="Estimated Shipping" value={this.state.cssSelector} onChange={(change) => this.setState({cssSelector: change})} />
+                </Stack.Item>
+                <Stack.Item>
+                  <TextField label="Reward Text" placeholder="Free Shipping" value={this.state.rewardText} onChange={(change) => this.setState({rewardText: change})} />
+                </Stack.Item>
+                <Stack.Item>
+                  <TextField label="Reward Code" placeholder="€" value={this.state.rewardCode} onChange={(change) => this.setState({rewardCode: change})} />
+                </Stack.Item>
+              </Stack>
+            </Card.Section>
+          </Card>
+        </Layout.AnnotatedSection>
       </Page>
     );
   }

@@ -12,6 +12,8 @@ const Router = require('koa-router');
 const db = require('./server/database.handler');
 const cors = require('@koa/cors');
 const serve = require('koa-static');
+const Shopify = require('shopify-api-node');
+const bodyParser = require('koa-body');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -29,13 +31,17 @@ app.prepare().then(() => {
   const router = new Router();
   server.use(session({ sameSite: 'none', secure: true }, server));
   server.keys = [SHOPIFY_API_SECRET_KEY];
+  server.use(cors({
+    origin: '*',
+  }));
   server.use(serve('public'));
+  server.use(bodyParser());
 
   server.use(
     createShopifyAuth({
       apiKey: SHOPIFY_API_KEY,
       secret: SHOPIFY_API_SECRET_KEY,
-      scopes: ['read_products', 'write_products'],
+      scopes: ['read_products', 'write_script_tags'],
       async afterAuth(ctx) {
         const { shop, accessToken } = ctx.session;
         ctx.cookies.set("shopOrigin", shop, {
@@ -45,8 +51,23 @@ app.prepare().then(() => {
         });
 
         // await getSubscriptionUrl(ctx, accessToken, shop);
+        const shopify = new Shopify({
+          shopName: shop,
+          accessToken,
+        });
 
+        console.log("auth")
 
+        shopify.scriptTag.list().then((res) => {
+          // TODO Check for duplicates
+          console.log('scripts tags', res);
+
+          shopify.scriptTag.create({
+            event: 'onload',
+            src: `${HOST}/christmas-loader.js`,
+            display_scope: 'all',
+          });
+        });
       }
     })
   );
