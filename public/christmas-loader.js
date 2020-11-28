@@ -24,7 +24,7 @@ let getShopId = () => getParams(SCRIPT_NAME).shop;
 
 let reward = {  body: "", code: "" };
 let applyReward = () => {
-  document.getElementById("reward-text").innerHtml = `${reward.body} ${reward.code}`;
+  document.getElementById("reward-text").innerHTML = `${reward.body} ${reward.code}`
 }
 
 function httpGetAsync(theUrl, callback) {
@@ -42,7 +42,7 @@ function httpGetAsync(theUrl, callback) {
 
 httpGetAsync(`${HOST}/public-config?shop=${getShopId()}`, function (receivedConfig) {
       receivedConfig = JSON.parse(receivedConfig);
-      arewardward = receivedConfig.reward;
+      reward = receivedConfig.reward;
       console.log('received config');
       console.log(receivedConfig);
       applyReward();      
