@@ -1,6 +1,6 @@
 /*** CODE BASE FOR GAME MOSTLY FROM HERE https://codepen.io/ricardpriet/pen/NXNLax ***/
 
-#codespherexmalt {
+#codespherexmalthackathon {
   background-size: 400px 450px;
   background-color: #c7dfe1;
   color: #414a51;
@@ -28,75 +28,75 @@
   /*ligths-houses*/
   /* Game */
 }
-#codespherexmalt *, #codespherexmalt *:after, #codespherexmalt *:before {
+#codespherexmalthackathon *, #codespherexmalthackathon *:after, #codespherexmalthackathon *:before {
   box-sizing: border-box;
 }
-#codespherexmalt .clearfix:before, #codespherexmalt .clearfix:after {
+#codespherexmalthackathon .clearfix:before, #codespherexmalthackathon .clearfix:after {
   display: table;
   content: "";
 }
-#codespherexmalt .clearfix:after {
+#codespherexmalthackathon .clearfix:after {
   clear: both;
 }
-#codespherexmalt a {
+#codespherexmalthackathon a {
   outline: none;
   color: #E86A64;
   text-decoration: none;
 }
-#codespherexmalt a:hover {
+#codespherexmalthackathon a:hover {
   color: #eb5f5f;
 }
-#codespherexmalt a:focus {
+#codespherexmalthackathon a:focus {
   outline: none;
 }
-#codespherexmalt h1, #codespherexmalt h2, #codespherexmalt h3, #codespherexmalt h4, #codespherexmalt h5, #codespherexmalt h6 {
+#codespherexmalthackathon h1, #codespherexmalthackathon h2, #codespherexmalthackathon h3, #codespherexmalthackathon h4, #codespherexmalthackathon h5, #codespherexmalthackathon h6 {
   clear: both;
   text-transform: none;
   font-weight: 300;
   line-height: 1.4;
   color: #414a51;
 }
-#codespherexmalt h1 {
+#codespherexmalthackathon h1 {
   margin: 8px 0 8px;
   font-size: 24px;
 }
-#codespherexmalt h2 {
+#codespherexmalthackathon h2 {
   margin: 44px 0 34px;
   font-size: 26px;
   font-size: 1.625rem;
 }
-#codespherexmalt h3 {
+#codespherexmalthackathon h3 {
   margin: 34px 0 24px;
   font-size: 24px;
   font-size: 1.5rem;
 }
-#codespherexmalt h4 {
+#codespherexmalthackathon h4 {
   margin: 24px 0 24px;
   font-size: 20px;
   font-size: 1.25rem;
 }
-#codespherexmalt h5 {
+#codespherexmalthackathon h5 {
   margin: 24px 0 14px;
   font-size: 18px;
   font-size: 1.125rem;
 }
-#codespherexmalt h6 {
+#codespherexmalthackathon h6 {
   margin: 24px 0 14px;
   font-size: 16px;
   font-size: 1rem;
 }
-#codespherexmalt p {
+#codespherexmalthackathon p {
   margin: 8px 0;
   font-size: 14px;
   color: #5a5a5a;
 }
-#codespherexmalt p.italic {
+#codespherexmalthackathon p.italic {
   font-style: italic;
   font-size: 12px;
 }
-#codespherexmalt input[type=text],
-#codespherexmalt input[type=email],
-#codespherexmalt input[type=url] {
+#codespherexmalthackathon input[type=text],
+#codespherexmalthackathon input[type=email],
+#codespherexmalthackathon input[type=url] {
   border: none;
   border-bottom: 1px solid #8ac26d;
   padding: 3px;
@@ -108,17 +108,17 @@
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-#codespherexmalt input[type=text]:focus,
-#codespherexmalt input[type=email]:focus,
-#codespherexmalt input[type=url]:focus {
+#codespherexmalthackathon input[type=text]:focus,
+#codespherexmalthackathon input[type=email]:focus,
+#codespherexmalthackathon input[type=url]:focus {
   border-bottom: 1px solid #eb5f5f;
   outline: 0;
   color: #5a5a5a;
 }
-#codespherexmalt textarea, #codespherexmalt input, #codespherexmalt button {
+#codespherexmalthackathon textarea, #codespherexmalthackathon input, #codespherexmalthackathon button {
   outline: none;
 }
-#codespherexmalt .more-link {
+#codespherexmalthackathon .more-link {
   color: #fff;
   background: #8ac26d;
   display: inline-block;
@@ -143,13 +143,13 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-#codespherexmalt .more-link:hover {
+#codespherexmalthackathon .more-link:hover {
   background: #eb5f5f;
 }
-#codespherexmalt.silo-modal-open {
+#codespherexmalthackathon.silo-modal-open {
   overflow: hidden;
 }
-#codespherexmalt .silo-modal {
+#codespherexmalthackathon .silo-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -160,12 +160,12 @@
   display: none;
   background-color: transparent;
 }
-#codespherexmalt .modal-a,
-#codespherexmalt .final-modal .modal-b {
+#codespherexmalthackathon .modal-a,
+#codespherexmalthackathon .final-modal .modal-b {
   display: block;
   background-color: rgba(0, 0, 0, 0.8);
 }
-#codespherexmalt .modal-b h1 {
+#codespherexmalthackathon .modal-b h1 {
   color: #fff;
   text-align: center;
   -webkit-animation: neon 6s linear infinite;
@@ -204,7 +204,7 @@
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
   }
 }
-#codespherexmalt .credits {
+#codespherexmalthackathon .credits {
   color: #fff;
   text-align: center;
   position: absolute;
@@ -216,12 +216,12 @@
   transform: translate(-50%, 0);
   width: 100%;
 }
-#codespherexmalt .container-envelope {
+#codespherexmalthackathon .container-envelope {
   position: relative;
   background-image: repeating-linear-gradient(135deg, #eb5f5f 0px, #eb5f5f 10px, #fffbf0 10px, #fffbf0 15px, #8ac26d 15px, #8ac26d 25px, #fffbf0 25px, #fffbf0 30px);
   padding: 5px 0;
 }
-#codespherexmalt .envelope {
+#codespherexmalthackathon .envelope {
   position: relative;
   background: #fffbf0;
   padding: 10px 15px;
@@ -233,41 +233,41 @@
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-#codespherexmalt #main-role-svg {
+#codespherexmalthackathon #main-role-svg {
   width: 40px;
   height: 65px;
 }
-#codespherexmalt #clues {
+#codespherexmalthackathon #clues {
   padding-left: 30px;
   max-width: 100%;
 }
-#codespherexmalt #clues p {
+#codespherexmalthackathon #clues p {
   margin: 0;
   font-size: 16px;
 }
-#codespherexmalt .absolute {
+#codespherexmalthackathon .absolute {
   position: absolute;
 }
-#codespherexmalt .svg-container {
+#codespherexmalthackathon .svg-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
 }
-#codespherexmalt #nieve-dentro-cupula .st13 {
+#codespherexmalthackathon #nieve-dentro-cupula .st13 {
   animation: blink 3.8s ease-in-out infinite both;
 }
-#codespherexmalt #snow01,
-#codespherexmalt #snow02,
-#codespherexmalt #snow03 {
+#codespherexmalthackathon #snow01,
+#codespherexmalthackathon #snow02,
+#codespherexmalthackathon #snow03 {
   animation: sky 30s linear infinite;
   opacity: 0;
 }
-#codespherexmalt #snow02 {
+#codespherexmalthackathon #snow02 {
   animation-delay: 10s;
   animation-duration: 25s;
 }
-#codespherexmalt #snow03 {
+#codespherexmalthackathon #snow03 {
   animation-delay: 17s;
   animation-duration: 18s;
 }
@@ -287,10 +287,10 @@
     opacity: 0;
   }
 }
-#codespherexmalt .streetlight {
+#codespherexmalthackathon .streetlight {
   animation: streetlight 5s linear infinite;
 }
-#codespherexmalt .streetlight-odd {
+#codespherexmalthackathon .streetlight-odd {
   animation: streetlight 7s linear infinite;
 }
 @keyframes streetlight {
@@ -304,19 +304,19 @@
     opacity: 1;
   }
 }
-#codespherexmalt .chimney {
+#codespherexmalthackathon .chimney {
   animation: streetlight 1s linear infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
 }
-#codespherexmalt #lil-stars path:nth-child(3n+1) {
+#codespherexmalthackathon #lil-stars path:nth-child(3n+1) {
   animation: starslight 18s linear infinite both;
 }
-#codespherexmalt #lil-stars path:nth-child(3n+2) {
+#codespherexmalthackathon #lil-stars path:nth-child(3n+2) {
   animation: starslight 18s linear infinite both;
   animation-delay: -6s;
 }
-#codespherexmalt #lil-stars path:nth-child(3n+3) {
+#codespherexmalthackathon #lil-stars path:nth-child(3n+3) {
   animation: starslight 18s linear infinite both;
   animation-delay: -12s;
 }
@@ -334,11 +334,11 @@
     opacity: 1;
   }
 }
-#codespherexmalt .noitem,
-#codespherexmalt .item {
+#codespherexmalthackathon .noitem,
+#codespherexmalthackathon .item {
   cursor: pointer;
 }
-#codespherexmalt .shake {
+#codespherexmalthackathon .shake {
   animation: shake 1s linear;
 }
 @keyframes shake {
@@ -367,7 +367,7 @@
     transform: translate(0px, 0px);
   }
 }
-#codespherexmalt .bounce {
+#codespherexmalthackathon .bounce {
   animation: bounce 3s linear;
 }
 @keyframes bounce {
@@ -435,18 +435,18 @@
     transform: translate(0px, 0px);
   }
 }
-#codespherexmalt #xmas-ligths-house circle:nth-child(4n+1) {
+#codespherexmalthackathon #xmas-ligths-house circle:nth-child(4n+1) {
   animation: ligthshouse 8s linear infinite both;
 }
-#codespherexmalt #xmas-ligths-house circle:nth-child(4n+2) {
+#codespherexmalthackathon #xmas-ligths-house circle:nth-child(4n+2) {
   animation: ligthshouse 8s linear infinite both;
   animation-delay: -2s;
 }
-#codespherexmalt #xmas-ligths-house circle:nth-child(4n+3) {
+#codespherexmalthackathon #xmas-ligths-house circle:nth-child(4n+3) {
   animation: ligthshouse 8s linear infinite both;
   animation-delay: -4s;
 }
-#codespherexmalt #xmas-ligths-house circle:nth-child(4n+4) {
+#codespherexmalthackathon #xmas-ligths-house circle:nth-child(4n+4) {
   animation: ligthshouse 8s linear infinite both;
   animation-delay: -6s;
 }
@@ -479,10 +479,10 @@
     fill: #f7e200;
   }
 }
-#codespherexmalt .hidden {
+#codespherexmalthackathon .hidden {
   display: none;
 }
-#codespherexmalt footer {
+#codespherexmalthackathon footer {
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -491,24 +491,24 @@
   padding: 0 15px;
   text-align: center;
 }
-#codespherexmalt footer p {
+#codespherexmalthackathon footer p {
   color: #fff;
 }
 @media (min-width: 600px) {
-  #codespherexmalt h1 {
+  #codespherexmalthackathon h1 {
     margin: 10px 0 10px;
     font-size: 32px;
   }
-  #codespherexmalt p {
+  #codespherexmalthackathon p {
     margin: 10px 0;
     font-size: 15px;
   }
-  #codespherexmalt .silo-modal-close {
+  #codespherexmalthackathon .silo-modal-close {
     top: 20px;
   }
 }
 @media (min-width: 800px) {
-  #codespherexmalt .container-envelope {
+  #codespherexmalthackathon .container-envelope {
     position: absolute;
     right: 60%;
     top: 15%;
@@ -516,50 +516,50 @@
     -moz-border-radius: 10px;
     border-radius: 10px;
   }
-  #codespherexmalt #main-role-svg {
+  #codespherexmalthackathon #main-role-svg {
     width: 50px;
     height: 80px;
   }
-  #codespherexmalt #clues p {
+  #codespherexmalthackathon #clues p {
     font-size: 18px;
   }
-  #codespherexmalt #clues {
+  #codespherexmalthackathon #clues {
     width: 300px;
   }
-  #codespherexmalt .final-modal h1 {
+  #codespherexmalthackathon .final-modal h1 {
     top: 60%;
   }
-  #codespherexmalt .final-modal .container-envelope {
+  #codespherexmalthackathon .final-modal .container-envelope {
     position: fixed;
     top: 5%;
   }
 }
 @media (min-width: 800px) and (min-height: 800px) {
-  #codespherexmalt .svg-container {
+  #codespherexmalthackathon .svg-container {
     max-height: 99vh;
     overflow: hidden;
   }
-  #codespherexmalt #mini-city {
+  #codespherexmalthackathon #mini-city {
     height: 108vh;
     margin-top: -3vh;
   }
-  #codespherexmalt .final-modal h1 {
+  #codespherexmalthackathon .final-modal h1 {
     top: 50%;
   }
-  #codespherexmalt .final-modal .container-envelope {
+  #codespherexmalthackathon .final-modal .container-envelope {
     position: absolute;
     top: 15%;
   }
 }
 @media (min-width: 1170px) {
-  #codespherexmalt .container-envelope {
+  #codespherexmalthackathon .container-envelope {
     right: 65%;
   }
-  #codespherexmalt #main-role-svg {
+  #codespherexmalthackathon #main-role-svg {
     width: 65px;
     height: 100px;
   }
-  #codespherexmalt #clues p {
+  #codespherexmalthackathon #clues p {
     font-size: 20px;
     margin: 10px 0;
   }
