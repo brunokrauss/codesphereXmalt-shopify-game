@@ -75,10 +75,19 @@ app.prepare().then(() => {
   router.get('/public-config', cors({
     origin: '*',
   }),async (ctx) => {
-    ctx.body = { success: true, reward: {
-      body: 'Thanks for playing. We prepared a gift for you. Enter following code in checkout and receive a free T-Shirt.',
-      code: 'CODESPHERExMALT'} }
-  });
+    const shop = "codespherexmalt.myshopify.com"; // TODO query
+
+    const config = db.getConfig(shop);
+    console.log(config)
+    const { rewardText, rewardCode } = config;
+    ctx.body = {
+      success: true,
+      reward: {
+        code: rewardCode,
+        body: rewardText,
+      }
+    };
+  })
 
   router.get('/config', verifyRequest(), async (ctx) => {
     const { shop } = ctx.session;
